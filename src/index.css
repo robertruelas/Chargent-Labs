@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Chargent brand: two greens, square blocks, one coin-shaped circle, Inter everywhere.
+   Single brand theme by design: the guide defines no dark mode. */
+:root {
+  --turquoise: #49dfa9;
+  --dark-teal: #005452;
+  --deep-teal: #003f3d;
+  --teal: #2e8787;
+  --yellow: #ffcc33;
+  --charcoal: #383e42;
+  --light-gray: #f2f2f2;
+  --white: #ffffff;
+  color-scheme: light;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--white);
+    color: var(--charcoal);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { text-wrap: balance; }
+  :focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+  ::selection { background: var(--turquoise); color: var(--dark-teal); }
+}
+
+@layer components {
+  .gutter {
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  .eyebrow {
+    @apply text-[13px] font-bold uppercase tracking-[0.12em];
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 px-5 py-3 text-[15px] font-semibold transition-colors duration-200;
+  }
+  .btn-primary { @apply btn bg-turquoise text-teal-dark hover:bg-white; }
+  .btn-ghost { @apply btn text-white ring-1 ring-inset ring-white/40 hover:bg-white hover:text-teal-dark; }
+  .btn-dark { @apply btn bg-teal-dark text-white hover:bg-charcoal; }
+  .accent-bar { @apply block h-2 w-24 bg-yellow; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
