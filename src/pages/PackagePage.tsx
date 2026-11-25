@@ -153,7 +153,7 @@ function MorePackages({ current }: { current?: LabPackage }) {
     <section className="bg-white">
       <div className="gutter mx-auto flex max-w-page flex-col gap-10 py-20 lg:py-24">
         <Rise>
-          <SectionTitle eyebrow="More on the bench" title={current ? "Other Labs packages" : "Browse the Labs packages"} />
+          <SectionTitle eyebrow="More on the bench" title={current ? (others.length === 1 ? "Another Labs package" : "Other Labs packages") : "Browse the Labs packages"} />
         </Rise>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {others.map((pkg, i) => (

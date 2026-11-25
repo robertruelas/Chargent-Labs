@@ -132,49 +132,7 @@ function Invoice() {
   );
 }
 
-function Updater() {
-  const { ref, step } = useLoop(4, 1300);
-  const updated = step >= 2;
-  return (
-    <div ref={ref} className="flex h-full flex-col items-center justify-center gap-3 p-5 text-[11px]">
-      <motion.div
-        className="relative flex h-[118px] w-[200px] flex-col justify-between bg-teal-dark p-4 text-white"
-        animate={{ rotateY: step === 1 ? 90 : 0 }}
-        transition={{ duration: 0.45, ease: "easeInOut" }}
-        style={{ transformPerspective: 600 }}
-      >
-        <div className="flex items-center justify-between">
-          <span className="h-5 w-7 bg-yellow" />
-          <span className="h-5 w-5 rounded-full bg-turquoise" />
-        </div>
-        <p className="text-[15px] font-semibold tracking-[0.18em] tabular-nums">
-          •••• {updated ? "8810" : "4242"}
-        </p>
-        <p className="tabular-nums text-white/80">
-          EXP <span className={updated ? "font-bold text-turquoise" : ""}>{updated ? "09/30" : "09/26"}</span>
-        </p>
-      </motion.div>
-      <motion.p
-        className="flex items-center gap-1 px-2 py-1 font-semibold"
-        animate={{
-          backgroundColor: updated ? "#49DFA9" : "#FFCC33",
-          color: "#005452",
-        }}
-      >
-        {updated ? (
-          <>
-            <Check className="h-3 w-3" strokeWidth={3} /> Card updated before next charge
-          </>
-        ) : (
-          "Card reissued by issuer"
-        )}
-      </motion.p>
-    </div>
-  );
-}
-
 export function PackageIllustration({ kind }: { kind: Illustration }) {
   if (kind === "ledger") return <Ledger />;
-  if (kind === "invoice") return <Invoice />;
-  return <Updater />;
+  return <Invoice />;
 }

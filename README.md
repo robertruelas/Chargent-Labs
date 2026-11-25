@@ -18,7 +18,7 @@ Built with React, TypeScript, Vite, Tailwind CSS and Framer Motion, styled with 
 
 Packages live in [`src/data/packages.ts`](src/data/packages.ts). Append an entry to add a package. Set `installUrl` (and optionally `docsUrl`) when the install link is ready; until then the card shows "Install link coming soon".
 
-Each package picks one of the animated illustrations in `src/components/Illustrations.tsx` (`ledger`, `invoice`, `updater`).
+Each package picks one of the animated illustrations in `src/components/Illustrations.tsx` (`ledger`, `invoice`).
 
 ## Layout
 
