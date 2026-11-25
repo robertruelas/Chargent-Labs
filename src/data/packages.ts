@@ -5,6 +5,8 @@ export type Illustration = "ledger" | "invoice" | "updater";
 
 export interface LabPackage {
   id: string;
+  /** URL segment for the package's page: #/packages/<slug> */
+  slug: string;
   name: string;
   tagline: string;
   summary: string;
@@ -19,6 +21,7 @@ export interface LabPackage {
 export const packages: LabPackage[] = [
   {
     id: "LAB-001",
+    slug: "accounting-seed-integration",
     name: "Accounting Seed Integration",
     tagline: "Get payments collected in Chargent into your Accounting Seed ledger.",
     summary:
@@ -36,6 +39,7 @@ export const packages: LabPackage[] = [
   },
   {
     id: "LAB-002",
+    slug: "pdf-invoices-for-opportunities",
     name: "PDF Invoices for Opportunities",
     tagline: "Turn an Opportunity into a clean PDF invoice in one click.",
     summary:
@@ -53,6 +57,7 @@ export const packages: LabPackage[] = [
   },
   {
     id: "LAB-003",
+    slug: "vantiv-account-updater",
     name: "Vantiv Account Updater",
     tagline: "Keep cards on file current so recurring payments don't fail.",
     summary:
@@ -69,3 +74,5 @@ export const packages: LabPackage[] = [
     docsUrl: "",
   },
 ];
+
+export const packagePath = (pkg: LabPackage) => `#/packages/${pkg.slug}`;
