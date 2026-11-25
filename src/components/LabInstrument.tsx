@@ -9,7 +9,6 @@ const INNER_HEX = "M320 112 L465.5 196 L465.5 364 L320 448 L174.5 364 L174.5 196
 const traces = [
   { id: "seed", label: "ACCOUNTING SEED", d: "M100 70 V240 H155.5", tag: { x: 16, y: 40, w: 168 } },
   { id: "pdf", label: "PDF INVOICES", d: "M562 140 V250 H484.5", tag: { x: 500, y: 110, w: 124 } },
-  { id: "vantiv", label: "ACCOUNT UPDATER", d: "M440 515 H402 V422.5", tag: { x: 440, y: 500, w: 184 } },
 ];
 
 // Short bracket segments between the two hexagons, echoing the Labs logo.
@@ -28,7 +27,7 @@ export function LabInstrument() {
       viewBox="0 0 640 560"
       className="h-auto w-full max-w-[640px]"
       role="img"
-      aria-label="The Chargent Labs hexagon with traces connecting Accounting Seed, PDF Invoices and Account Updater to the Chargent core"
+      aria-label="The Chargent Labs hexagon with traces connecting Accounting Seed and PDF Invoices to the Chargent core"
     >
       {/* Traces and their tags */}
       {traces.map((t, i) => (

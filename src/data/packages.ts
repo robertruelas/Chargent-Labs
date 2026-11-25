@@ -1,7 +1,7 @@
 // The packages featured on the site. Add a new Labs package by appending to this list.
 // Leave installUrl empty until a package's install link is ready; the card then shows "Install link coming soon".
 
-export type Illustration = "ledger" | "invoice" | "updater";
+export type Illustration = "ledger" | "invoice";
 
 export interface LabPackage {
   id: string;
@@ -52,24 +52,6 @@ export const packages: LabPackage[] = [
     worksWith: ["Chargent", "Opportunities"],
     goodFor: "Teams that sell on Opportunities and need an invoice before the payment is collected.",
     illustration: "invoice",
-    installUrl: "",
-    docsUrl: "",
-  },
-  {
-    id: "LAB-003",
-    slug: "vantiv-account-updater",
-    name: "Vantiv Account Updater",
-    tagline: "Keep cards on file current so recurring payments don't fail.",
-    summary:
-      "Uses the Vantiv (Worldpay) Account Updater service to refresh stored card details when a customer's card is reissued or expires, before the next scheduled charge runs.",
-    highlights: [
-      "Updates expired and reissued card numbers and expiration dates",
-      "Reduces declines on recurring and scheduled Chargent payments",
-      "Leaves a record of each update for your payments team",
-    ],
-    worksWith: ["Chargent", "Vantiv / Worldpay"],
-    goodFor: "Subscription and installment businesses processing through Vantiv.",
-    illustration: "updater",
     installUrl: "",
     docsUrl: "",
   },
